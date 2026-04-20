@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday</title>
+
+<!-- Bubble Font -->
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Fredoka', sans-serif;
+    background: #000;
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    background: white;
+    padding: 15px;
+    z-index: 1000;
+  }
+
+  .header h1 {
+    margin: 0;
+    font-weight: 700;
+    color: #ff0000; /* 🔴 Bright Red */
+    font-size: 22px;
+  }
+
+  /* CARD WRAPPER */
+  .card-wrapper {
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+  }
+
+  /* COVER */
+  .cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fff, #f5f5f5);
+    border-radius: 20px;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+
+    font-weight: 700;
+    font-family: 'Fredoka', sans-serif;
+    color: #ff0000;
+    font-size: 20px;
+
+    cursor: pointer;
+  }
+
+  .cover.open {
+    animation: slideUp 0.25s ease forwards;
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(0); opacity: 1; }
+    to   { transform: translateY(-100%); opacity: 0; }
+  }
+
+  /* INNER CARD */
+  .inner {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+
+    background: url("https://i.postimg.cc/MH8nt9Mt/IMG-20240420-004737.jpg") no-repeat center center;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .inner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.6);
+  }
+
+  .content {
+    position: relative;
+    padding: 60px 20px;
+  }
+
+  /* LINES */
+  .line {
+    font-weight: 700;
+    font-size: 18px;
+    color: #ff0000;
+    margin: 40px 0;
+    opacity: 0.2;
+    filter: blur(1px);
+    transition: all 0.5s ease;
+    text-align: center;
+  }
+
+  .line.active {
+    opacity: 1;
+    filter: blur(0);
+    font-size: 22px;
+  }
+
+  /* CONFETTI */
+  .confetti {
+    position: fixed;
+    top: -10px;
+    width: 8px;
+    height: 8px;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    to { transform: translateY(100vh) rotate(360deg); }
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>HAPPIEST BIRTHDAY JAYASHREE (BAE 😍❤️)</h1>
+</div>
+
+<div class="card-wrapper">
+  <div class="card">
+
+    <div class="cover" id="cover" onclick="openCard()">
+      Your Day, So Open By Making A Wish 🎁
+    </div>
+
+    <div class="inner">
+      <div class="content">
+
+        <div style="height:40vh;"></div>
+
+        <div class="line">Happiest Birthday to my Favorite & Close One.</div>
+        <div class="line">May this year bring more Love, Health, Happiness, Prosperity</div>
+        <div class="line">and lots of Joy into your life.</div>
+
+        <div class="line">ನಿನಗಾಗಿ ನಾನು ಎಷ್ಟು ಖುಷಿಪಟ್ಟಿದ್ದೀನಿ ಅಂತ ಹೇಳೋಕೆ ಆಗಲ್ಲ…</div>
+        <div class="line">ನಿನ್ನ ನಗು ನೋಡೋದು, ನಿನ್ನ ಖುಷಿಯಾಗಿ ಇರೋದು,</div>
+        <div class="line">ನಿನ್ನ ಸ್ಪೆಷಲ್ ಡೇನಲ್ಲಿ ಹರ್ಷ ಮತ್ತು ನಗುವಿನ ಜೊತೆ</div>
+        <div class="line">ಹಾರ್ತಿರೋ ನಿನ್ನನ್ನು ನೋಡೋದು — ತುಂಬಾ ಸಂತೋಷ ಕೊಡ್ತಿದೆ.</div>
+
+        <div class="line">ನಾವು ಮಾತಾಡದ ದಿನಗಳಲ್ಲಿ ನಾನು ನಿನ್ನನ್ನು ತುಂಬಾ ಮಿಸ್ ಮಾಡಿದ್ದೆ…</div>
+        <div class="line">ಆ ದಿನಗಳಲ್ಲಿ ನನಗೆ ಎಷ್ಟು ನೋವಾಗುತ್ತಿತ್ತೋ ಹೇಳೋಕೆ ಆಗಲ್ಲ.</div>
+
+        <div class="line">ಆದ್ರೂ ನಾನು “SORRY” ಅಂತ ಕೇಳ್ತೀನಿ.</div>
+        <div class="line">I will be with you and always care for your happiness.....</div>
+
+        <div class="line">ನಮ್ಮಿಬ್ಬರ ಸಂಬಂಧ ಎಲ್ಲರೂ ಹೀಗಿರ್ಬೇಕು ಅಂತ ಆಸೆ ಪಡುವಂತಿರಲಿ.</div>
+        <div class="line">ನಿನ್ನ ಜೊತೆ ಯಾರೂ ಇಲ್ಲ ಅಂತ ಅನಿಸ್ಕೊಳ್ಬೇಡ…</div>
+        <div class="line">ನಾನು ಯಾವಾಗಲೂ ನಿನ್ನ biggest supporter ಆಗಿರ್ತೀನಿ</div>
+
+        <div style="height:40vh;"></div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const lines = document.querySelectorAll('.line');
+
+function highlightLine() {
+  let closest = null;
+  let minDistance = window.innerHeight;
+
+  lines.forEach(line => {
+    const rect = line.getBoundingClientRect();
+    const distance = Math.abs(rect.top - window.innerHeight / 2);
+
+    if (distance < minDistance) {
+      minDistance = distance;
+      closest = line;
+    }
+  });
+
+  lines.forEach(line => line.classList.remove('active'));
+  if (closest) closest.classList.add('active');
+}
+
+window.addEventListener('scroll', highlightLine);
+highlightLine();
+
+function openCard() {
+  const cover = document.getElementById("cover");
+  cover.classList.add("open");
+
+  setTimeout(() => {
+    cover.style.display = "none";
+    createConfetti();
+  }, 250);
+}
+
+function createConfetti() {
+  for (let i = 0; i < 80; i++) {
+    const c = document.createElement("div");
+    c.classList.add("confetti");
+
+    c.style.left = Math.random() * 100 + "vw";
+    c.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    c.style.background =
+      ["#ff4d4d","#ffd700","#00ffcc","#ff66ff"][Math.floor(Math.random()*4)];
+
+    document.body.appendChild(c);
+
+    setTimeout(() => c.remove(), 5000);
+  }
+}
+</script>
+
+</body>
+</html>
